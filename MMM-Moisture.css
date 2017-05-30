@@ -1,0 +1,42 @@
+.module.MMM-Radio {
+    border-top: 1px solid white;
+    padding-top: 30px;
+}
+
+div.stations {
+   float: left;
+   width: 400px;
+   line-height: 23px;
+}
+
+div.volume {
+  float: left;
+}
+
+div.stations > div {
+  padding: 10px 10px
+}
+
+div.stations > :not(.selected) {
+  display: none;
+}
+
+span.icon-volume-down, span.icon-volume-up {
+    padding: 0px 10px;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 159px;
+  margin-bottom: 12px
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #000;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: #fff;
+  border-radius: 5px;
+}
