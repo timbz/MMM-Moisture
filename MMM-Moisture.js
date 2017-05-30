@@ -9,7 +9,7 @@ Module.register("MMM-Moisture", {
   // Default module config.
   defaults: {
     endpoint: 'http://hass.home.lan/api/states/sensor.palme_moisture',
-    threshold: 35,
+    threshold: 40,
     updateInterval: 10 * 60 * 1000 // every 10 minutes
   },
 
