@@ -34,6 +34,7 @@ Module.register("MMM-Moisture", {
   },
 
   updateSensor: function () {
+    Log.info(self.name + ": Getting sensor data.");
     var self = this;
     var sensorRequest = new XMLHttpRequest();
     sensorRequest.open("GET", this.config.endpoint, true);
