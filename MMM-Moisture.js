@@ -38,10 +38,10 @@ Module.register("MMM-Moisture", {
     Log.info(this.name + ": Getting sensor data.");
     var self = this;
     var sensorRequest = new XMLHttpRequest();
+    sensorRequest.open("GET", this.config.endpoint, true);
     if (this.config.password) {
       sensorRequest.setRequestHeader("X-HA-Access", this.config.password);
     }
-    sensorRequest.open("GET", this.config.endpoint, true);
     sensorRequest.onreadystatechange = function () {
       if (this.readyState === 4) {
         if (this.status === 200) {
