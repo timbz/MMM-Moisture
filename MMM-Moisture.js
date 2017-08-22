@@ -10,7 +10,8 @@ Module.register("MMM-Moisture", {
   defaults: {
     endpoint: 'http://hass.home.lan/api/states/sensor.palm_moisture',
     threshold: 35,
-    updateInterval: 60 * 1000 // every minute
+    updateInterval: 60 * 1000, // every minute
+    password: false
   },
 
   // Define required scripts.
@@ -37,6 +38,9 @@ Module.register("MMM-Moisture", {
     Log.info(this.name + ": Getting sensor data.");
     var self = this;
     var sensorRequest = new XMLHttpRequest();
+    if (this.config.password) {
+      sensorRequest.setRequestHeader("X-HA-Access", this.config.password);
+    }
     sensorRequest.open("GET", this.config.endpoint, true);
     sensorRequest.onreadystatechange = function () {
       if (this.readyState === 4) {
